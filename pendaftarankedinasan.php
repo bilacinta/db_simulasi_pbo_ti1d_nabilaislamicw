@@ -1,10 +1,10 @@
 <?php
 require_once 'pendaftaran.php';
 
-class PendaftaranPrestasi extends Pendaftaran
+class PendaftaranKedinasan extends Pendaftaran
 {
-    private $jenisPrestasi;
-    private $tingkatPrestasi;
+    private $skIkatanDinas;
+    private $instansiSponsor;
 
     public function __construct(
         $id,
@@ -12,30 +12,31 @@ class PendaftaranPrestasi extends Pendaftaran
         $asal,
         $nilai,
         $biaya,
-        $jenisPrestasi,
-        $tingkatPrestasi
+        $sk,
+        $instansi
     ){
         parent::__construct($id, $nama, $asal, $nilai, $biaya);
 
-        $this->jenisPrestasi = $jenisPrestasi;
-        $this->tingkatPrestasi = $tingkatPrestasi;
+        $this->skIkatanDinas = $sk;
+        $this->instansiSponsor = $instansi;
     }
 
+    // Polimorfisme (Overriding)
     public function hitungTotalBiaya()
     {
-        return $this->biayaPendaftaranDasar - 100000;
+        return $this->biayaPendaftaranDasar * 1.25;
     }
 
     public function tampilkanInfoJalur()
     {
-        return "Prestasi : ".$this->jenisPrestasi.
-               " | Tingkat : ".$this->tingkatPrestasi;
+        return "SK : ".$this->skIkatanDinas.
+               " | Sponsor : ".$this->instansiSponsor;
     }
 
-    public function getDaftarPrestasi($db)
+    public function getDaftarKedinasan($db)
     {
         $query = "SELECT * FROM tabel_pendaftaran
-                  WHERE jalur_pendaftaran='Prestasi'";
+                  WHERE jalur_pendaftaran='Kedinasan'";
 
         return $db->query($query);
     }
