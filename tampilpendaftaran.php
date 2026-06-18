@@ -1,8 +1,8 @@
 <?php
-require_once 'Koneksi.php';
-require_once 'PendaftaranReguler.php';
-require_once 'PendaftaranPrestasi.php';
-require_once 'PendaftaranKedinasan.php';
+require_once 'koneksi.php';
+require_once 'pendaftaranreguler.php';
+require_once 'pendaftaranprestasi.php';
+require_once 'pendaftarankedinasan.php';
 
 $koneksi = new Koneksi();
 
