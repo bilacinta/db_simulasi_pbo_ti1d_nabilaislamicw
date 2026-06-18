@@ -5,7 +5,7 @@ class Koneksi
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "db_simulasi_pbo_ti1d_nabilaislamicintaw";
+    private $database = "db_simulasi_pbo_ti1d_nabilaislamicw";
 
     protected $conn;
 
