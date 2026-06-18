@@ -21,6 +21,7 @@ class PendaftaranReguler extends Pendaftaran
         $this->lokasiKampus = $lokasiKampus;
     }
 
+    // Polimorfisme (Overriding)
     public function hitungTotalBiaya()
     {
         return $this->biayaPendaftaranDasar;
