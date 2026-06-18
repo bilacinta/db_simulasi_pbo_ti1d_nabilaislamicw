@@ -21,9 +21,10 @@ class PendaftaranPrestasi extends Pendaftaran
         $this->tingkatPrestasi = $tingkatPrestasi;
     }
 
+    // Polimorfisme (Overriding)
     public function hitungTotalBiaya()
     {
-        return $this->biayaPendaftaranDasar - 100000;
+        return $this->biayaPendaftaranDasar - 50000;
     }
 
     public function tampilkanInfoJalur()
